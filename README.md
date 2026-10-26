@@ -9,6 +9,11 @@ python src/pod_planner.py --gpus 256 --gpus-per-node 8 --gpu-watts 700
 python -m unittest discover -s tests -v
 ```
 
+```bash
+docker build -t nvidia-lab/pod .
+docker run --rm nvidia-lab/pod --gpus 256
+```
+
 輸出為 JSON，適合接到容量規劃表、報價流程或 IaC 產生器。一般 CI 驗證分級、進位與功耗計算，Pages workflow 負責網站部署。
 
 ## 使用邊界
